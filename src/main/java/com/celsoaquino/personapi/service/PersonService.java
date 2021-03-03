@@ -19,8 +19,7 @@ public class PersonService {
 
     private PersonRepository personRepository;
 
-   private final PersonMapper personMapper = PersonMapper.INSTANCE;
-
+    private final PersonMapper personMapper = PersonMapper.INSTANCE;
 
     public MessageResponseDTO createPerson(PersonDTO personDTO) {
         Person personToSave = personMapper.toModel(personDTO);
@@ -36,7 +35,7 @@ public class PersonService {
     }
 
     public PersonDTO findById(Long id) throws PersonNotFoundException {
-      Person person = verifyIfExists(id);
+        Person person = verifyIfExists(id);
         return personMapper.toDTO(person);
     }
 
